@@ -50,10 +50,7 @@ var carRental = {
 };
 
 var renter = {
-    customer: [
-        {
-        name: "",
-        car: ""
+    customer: [{
         }
     ]
 };
@@ -78,13 +75,13 @@ var renter = {
     // };
     
     function updateEcon() {
-        var updatedEcon = document.getElementById("carSelect").value="economyDrop";
+        var updatedEcon = document.getElementById("carSelect").value;
         document.getElementById("econAvail").innerHTML = carRental.economyCars;
         document.getElementById("econPrice").innerHTML = carRental.economyPrice;
     };
     
     function updateMid() {
-        var updatedMidsize = document.getElementById("carSelect").value="midsizeDrop";
+        var updatedMidsize = document.getElementById("carSelect").value;
         document.getElementById("midsizeAvail").innerHTML = carRental.midsizeCars;
         document.getElementById("midsizePrice").innerHTML = carRental.midsizePrice;
     };
@@ -97,26 +94,24 @@ var renter = {
     };
     
     function update2() {
-        if (document.getElementById("carSelect").value === "economyDrop") {
+        if (document.getElementById("carSelect").value === "economy") {
             updateEcon();
-        } else if (document.getElementById("carSelect").value === "midsizeDrop") {
+        } else if (document.getElementById("carSelect").value === "midsize") {
             updateMid();
         } else {showNothing();
         }
     };
     
     function carRent() {
-        if (document.getElementById("fullName").value && document.getElementById("carSelect").value === "economyDrop") {
+        if (document.getElementById("fullName").value && document.getElementById("carSelect").value === "economy") {
             document.getElementById("econAvail").innerHTML = carRental.bookEcon();
             document.getElementById("econAvail").innerHTML = carRental.economyAvail();
-            renter.customer[0].name.push();
-            renter.customer[0].car.push();
+            renter.customer.push({name:document.getElementById("fullName").value, car:document.getElementById("carSelect").value});
             alert("Your car is booked! Have a great day!");
-        } else if (document.getElementById("fullName").value  && document.getElementById("carSelect").value === "midsizeDrop") {
+        } else if (document.getElementById("fullName").value  && document.getElementById("carSelect").value === "midsize") {
             document.getElementById("midsizeAvail").innerHTML = carRental.bookMid();
             document.getElementById("midsizeAvail").innerHTML = carRental.midsizeAvail();
-            renter.customer[0].name.push();
-            renter.customer[0].car.push();
+            renter.customer.push({name:document.getElementById("fullName").value, car:document.getElementById("carSelect").value});
             alert("Your car is booked! Have a great day!");
         } else {
             alert("Missing field!!!");
