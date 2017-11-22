@@ -16,17 +16,6 @@
     </div>
         <br>
     <div>
-        <h3>Economy cars:</h3>
-        <p id="econAvail"></p>
-        <h4>Price</h4>
-        <p id="econPrice"></p><br>
-        <h3>Mid-Sized Cars:</h3>
-        <p id="midsizeAvail"></p>
-        <h4>Price</h4>
-        <p id="midsizePrice"></p><br>
-        <button onclick="update()">Update Availability</button>
-        <!--<button onclick="economyClass()">Rent an Economy Car</button>-->
-        <!--<button onclick="midsizeClass()">Rent a Midsize Car</button><br>-->
         <h3>Rental Form:</h3>
         
         <form id="form">
@@ -34,14 +23,41 @@
             <input type="text" id="fullName" placeholder="Bob Saget" required="">
             <br>
             Car Types:<br>
-            <select id="carSelect" onchange="update2()">
-                <option value="blank">Please Select A Car</option>
-                <option value="economy">Economy</option>
-                <option value="midsize">Midsize</option>
+            <select id="carChoice">
+                
             </select>
+            
+            <!--from update v1-->
+            <!--<select id="carSelect" onchange="update2()">-->
+            <!--    <option value="blank">Please Select A Car</option>-->
+            <!--    <option value="economy">Economy</option>-->
+            <!--    <option value="midsize">Midsize</option>-->
+            <!--</select>-->
         </form><br>
         
-            <button onclick="carRent()" id="rentCar">Rent the Car</button>
+        <!--from update v2-->
+        <h5>Availability:</h5>
+        <span id="carAvail"></span>
+        <h5>Price:</h5>
+        <span id="carPrice"></span>
+        <br>
+        
+        <!--from update v1-->
+        <!--<h3>Economy cars:</h3>-->
+        <!--<p id="econAvail"></p>-->
+        <!--<h4>Price</h4>-->
+        <!--<p id="econPrice"></p><br>-->
+        <!--<h3>Mid-Sized Cars:</h3>-->
+        <!--<p id="midsizeAvail"></p>-->
+        <!--<h4>Price</h4>-->
+        <!--<p id="midsizePrice"></p><br>-->
+        
+        <!--Original-->
+        <!--<button onclick="update()">Update Availability</button>-->
+        <!--<button onclick="economyClass()">Rent an Economy Car</button>-->
+        <!--<button onclick="midsizeClass()">Rent a Midsize Car</button><br>-->
+        
+            <button id="rentCar" type="submit">Rent the Car</button>
     </div><br>
     
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
